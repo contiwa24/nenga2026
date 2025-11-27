@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ブロック崩し</title>
+    <style>
+        body {
+            /* ★★★ 背景画像の設定 ★★★ */
+            background-image: url('wp5493583-original-blue-wallpapers.jpg');
+            background-size: cover; /* 画面全体に画像を拡大/縮小して表示 */
+            background-repeat: no-repeat; /* 画像の繰り返しをしない */
+            background-position: center; /* 画像を中央に配置 */
+            /* ★★★ ここまで背景画像の設定 ★★★ */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        canvas {
+            border: 2px solid #333; /* ゲーム画面の枠線 */
+            /* ★ Canvasの背景を半透明に設定（これが重要） ★ */
+            background-color: rgba(255, 255, 255, 0.8); /* または rgba(0,0,0,0.5) など */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
