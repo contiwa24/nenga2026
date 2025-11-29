@@ -4,29 +4,41 @@
     <meta charset="utf-8">
     <title>ブロック崩し</title>
     <style>
+        /* ブラウザの初期設定をリセットし、画面いっぱいに表示するための設定 */
+        html, body {
+            margin: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
         body {
-            /* ★★★ 背景画像の設定 ★★★ */
-            background-image: url('wp5493583-original-blue-wallpapers.jpg');
-            background-size: cover; /* 画面全体に画像を拡大/縮小して表示 */
-            background-repeat: no-repeat; /* 画像の繰り返しをしない */
-            background-position: center; /* 画像を中央に配置 */
-            /* ★★★ ここまで背景画像の設定 ★★★ */
+            /* ★★★ ブロック裏の隠し画像 (Canvas背後) ★★★ */
+            /* ブロックを壊したときに見せたい画像をここに設定してください */
+            background-image: url('initial_bricks_layout.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
 
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
+
         canvas {
-            border: 2px solid #333; /* ゲーム画面の枠線 */
-            /* ★ Canvasの背景を半透明に設定（これが重要） ★ */
-            background-color: rgba(255, 255, 255, 0.8); /* または rgba(0,0,0,0.5) など */
+            /* Canvasを親要素（body）のサイズに合わせるための設定 */
+            width: 100vw;
+            height: 100vh;
+
+            border: 2px solid #333;
+            /* ★ Canvasの背景を完全に不透明な白に設定（これがブロックの下地） ★ */
+            background-color: #FFFFFF;
         }
     </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <canvas id="myCanvas"></canvas>
+
     <script src="game.js"></script>
 </body>
 </html>
