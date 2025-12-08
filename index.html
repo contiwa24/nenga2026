@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <title>ブロック崩し</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブロック崩しゲーム - HAPPY NEW YEAR!!</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
     <style>
-        /* ブラウザの初期設定をリセットし、画面いっぱいに表示するための設定 */
-        html, body {
-            margin: 0;
-            overflow: hidden;
-            height: 100%;
-            width: 100%;
-        }
-
+        /* CSSでキャンバスを中央に配置 */
         body {
-            /* ★★★ ブロック裏の隠し画像 (Canvas背後) ★★★ */
-            /* ブロックを壊したときに見せたい画像をここに設定してください */
-            background-image: url('initial_bricks_layout.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            
+
+            font-family: Arial, sans-serif;
         }
-
         canvas {
-            /* Canvasを親要素（body）のサイズに合わせるための設定 */
-            width: 100vw;
-            height: 100vh;
-
             border: 2px solid #333;
-            /* ★ Canvasの背景を完全に不透明な白に設定（これがブロックの下地） ★ */
-            background-color: #FFFFFF;
+            /* キャンバスの幅と高さは game.js で動的に設定されます */
+            display: block;
         }
     </style>
 </head>
-<body>
+<body background="./nenga2026.png" marginwidth="0" marginheight="0">
     <canvas id="myCanvas"></canvas>
 
     <script src="game.js"></script>
